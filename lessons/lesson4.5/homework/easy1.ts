@@ -3,8 +3,13 @@
 // Нужно заменить FIXME на тип который вычисляется на освове OrderState
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-type ExceptTypes =  "buyingSupplies" | "producing";
-type AllTypes = "initial" | "inWork" | "buyingSupplies" | "producing" | "fullfilled";
+type ExceptTypes = "buyingSupplies" | "producing";
+type AllTypes =
+  | "initial"
+  | "inWork"
+  | "buyingSupplies"
+  | "producing"
+  | "fullfilled";
 
 const orderStates = [
   "initial",
@@ -14,7 +19,7 @@ const orderStates = [
   "fullfilled",
 ] as const;
 
-type FIXME =  Array<Exclude<AllTypes, ExceptTypes>>;
+type FIXME = Array<Exclude<AllTypes, ExceptTypes>>;
 
 type OrderState = typeof orderStates[number];
 
