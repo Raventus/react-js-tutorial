@@ -6,7 +6,6 @@
 
 type FIXME = Order["state"];
 
-
 type Order =
   | {
       state: "initial";

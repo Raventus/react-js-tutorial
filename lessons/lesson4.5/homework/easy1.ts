@@ -13,7 +13,7 @@ const orderStates = [
   "fullfilled",
 ] as const;
 
-type FIXME = Array<Exclude< typeof orderStates[number], ExceptTypes>>;
+type FIXME = Array<Exclude<typeof orderStates[number], ExceptTypes>>;
 
 type OrderState = typeof orderStates[number];
 
