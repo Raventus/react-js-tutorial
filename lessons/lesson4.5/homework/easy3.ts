@@ -3,7 +3,7 @@
 // Нужно заменить FIXME на соответствующий тип
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-type T = Record<any, any>;
+type T = {};
 type K<T> = keyof T;
 
 type FIXME = Omit<T, K<T>>;
