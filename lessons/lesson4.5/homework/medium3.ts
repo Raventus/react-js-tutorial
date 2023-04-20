@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-type FIXME = OrderStateWithoutProdAndByuing;
+type FIXME = Exclude<OrderState, "buyingSupplies" | "producing">;
 
 const orderStates = [
   "initial",
@@ -10,11 +10,6 @@ const orderStates = [
 ] as const;
 
 type OrderState = typeof orderStates[number];
-
-type OrderStateWithoutProdAndByuing = Exclude<
-  OrderState,
-  "buyingSupplies" | "producing"
->;
 
 // Hint: type guards
 export const getUserOrderStates = (orderStates: OrderState[]): FIXME[] =>
